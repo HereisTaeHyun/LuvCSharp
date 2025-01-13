@@ -1,6 +1,11 @@
 class Solution 
 
 {
+    public int solution0113(int num1, int num2)
+    {
+        int answer = num1 == num2 ? 1:-1;
+        return answer;
+    }
     public int solution01102(int age)
     {
         int answer = 0;
