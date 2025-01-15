@@ -1,6 +1,32 @@
+using System.Formats.Asn1;
+
 class Solution 
 
 {
+    public double solution0115(int[] numbers)
+    {
+        double answer = 0;
+        double store = 0;
+
+        //Linq 버전
+        // return numbers.Average();
+
+        // for 버전
+        // for (int i = 0; i < numbers.Length; i++)
+        // {
+        //     store += numbers[i];
+        // }
+        // answer = store / numbers.Length;
+
+        // foreach 버전
+        foreach(int elem in numbers)
+        {
+            store += elem;
+        }
+        answer = store / numbers.Length;
+
+        return answer ;
+    }
     public int solution01142(int n, int k)
     {
         int answer = 0;
