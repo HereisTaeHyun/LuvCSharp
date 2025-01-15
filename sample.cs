@@ -56,4 +56,43 @@ class Sample
         Console.WriteLine(ss.Sum());
         Console.WriteLine(string.Join(", ", ss));
     }
+    public void List()
+    {
+        List<int> ilst = new List<int>();
+        List<char> clst = new List<char>();
+        List<float> flst = new List<float>();
+        List<bool> blst = new List<bool>();
+        List<string> slst = new List<string>();
+
+        ilst.Add(10);
+        ilst.Add(1);
+        ilst.Add(100);
+        ilst.Add(150);
+        ilst.Remove(10);
+        int len = ilst.Count();
+
+    }
+
+    public void LinkedList() {
+        LinkedList<int> linkIntLst = new LinkedList<int>();
+        LinkedList<string> linkStringLst = new LinkedList<string>();
+        linkStringLst.AddLast("Banana");
+        linkStringLst.AddLast("Apple");
+        linkStringLst.AddLast("Durian");
+        linkStringLst.AddLast("Mango");
+
+        LinkedListNode<string> node = linkStringLst.Find("Banana");
+        LinkedListNode<string> newnode = new LinkedListNode<string>("Orange");
+
+        linkStringLst.AddAfter(node, newnode);
+
+        linkStringLst.ToList<string>().ForEach(p => Console.WriteLine(p));
+
+        Console.WriteLine("-----------------------구분자-----------------------");
+
+        foreach(string elem in linkStringLst)
+        {
+            Console.WriteLine(elem);
+        }
+    }
 }
