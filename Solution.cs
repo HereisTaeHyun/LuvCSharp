@@ -3,6 +3,19 @@ using System.Formats.Asn1;
 class Solution 
 
 {
+    public int[] solution01162(int[] numbers, int num1, int num2)
+    {
+        List<int> store = new List<int>();
+        for(int i = num1; i <= num2; i++)
+        {
+            store.Add(numbers[i]);
+        }
+        return store.ToArray();
+    }
+    public int solution0116(string message)
+    {
+        return message.Length * 2;
+    }
     public double solution0115(int[] numbers)
     {
         double answer = 0;
