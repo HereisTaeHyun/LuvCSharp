@@ -1,6 +1,40 @@
 class Sample
 
 {
+    public void QueueStack()
+    {
+        Queue<int> q = new Queue<int>();
+        q.Enqueue(120);
+        q.Enqueue(50);
+        q.Enqueue(40);
+        q.Enqueue(300);
+        q.Enqueue(20);
+
+        int next = q.Dequeue();
+        int qSize = q.Count();
+
+        Console.WriteLine($"Qsize : {qSize}");
+        Console.WriteLine($"Next : {next}");
+        next = q.Dequeue();
+        Console.WriteLine($"Next : {next}");
+
+        Console.WriteLine("--------------------------------------");
+
+        Stack<float> s = new Stack<float>();
+
+        s.Push(120.0f);
+        s.Push(50.0f);
+        s.Push(40.0f);
+        s.Push(300.0f);
+        s.Push(20.0f);
+
+        float val = s.Pop();
+        float sSize = s.Count();
+
+
+        Console.WriteLine($"sSize : {sSize}");
+        Console.WriteLine($"val : {val}");
+    }
     public void DataType()
     {
         bool b = true;
