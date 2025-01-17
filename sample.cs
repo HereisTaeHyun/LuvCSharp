@@ -1,6 +1,38 @@
+using System.Collections;
+
 class Sample
 
 {
+    public void Dictionary()
+    {
+        List<char> cList = new List<char>();
+        var cListVar = new List<char>();
+        var dic = new Dictionary<int, int>();
+
+        Hashtable ht = new Hashtable();
+        ht.Add("First", "Irina");
+        ht.Add("Second", "Tom");
+        if (ht.Contains("Second"))
+        {
+            Console.WriteLine(ht["Second"]);
+        }
+
+        Dictionary<int, string> emp = new Dictionary<int, string>();
+        emp.Add(1, "Fisrt");
+        emp.Add(2, "Second");
+        emp.Add(3, "Third");
+        emp.Add(4, "Forth");
+        emp.Add(5, "Fifth");
+
+        int dicSize = emp.Count();
+        string thirdName = emp[3];
+        Console.WriteLine($"dicSize : {dicSize}");
+        if (emp.ContainsKey(3))
+        {
+            Console.WriteLine($"thirdName : {thirdName}");
+        }
+
+    }
     public void QueueStack()
     {
         Queue<int> q = new Queue<int>();
@@ -106,7 +138,6 @@ class Sample
         int len = ilst.Count();
 
     }
-
     public void LinkedList() {
         LinkedList<int> linkIntLst = new LinkedList<int>();
         LinkedList<string> linkStringLst = new LinkedList<string>();
