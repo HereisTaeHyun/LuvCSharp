@@ -3,6 +3,33 @@ using System.Formats.Asn1;
 class Solution 
 
 {
+    public int[] solution01172(int[] num_list)
+    {
+        int[] answer = new int[2] {0, 0};
+        foreach(int elem in num_list)
+        {
+            if(elem % 2 == 0)
+            {
+                answer[0] += 1;
+            }
+            else
+            {
+                answer[1] += 1;
+            }
+        }
+        return answer;
+    }
+    public int solution0117(int[] array, int height)
+    {
+        int counter = 0;
+        foreach(int elem in array) {
+            if(elem > height)
+            {
+                counter += 1;
+            }
+        }
+        return counter;
+    }
     public int[] solution01162(int[] numbers, int num1, int num2)
     {
         List<int> store = new List<int>();
