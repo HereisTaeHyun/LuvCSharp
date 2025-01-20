@@ -3,6 +3,14 @@ using System.Formats.Asn1;
 class Solution 
 
 {
+    public int solution0120(int slice, int n) {
+        int answer = n / slice;
+        if(n % slice != 0)
+        {
+            answer += 1;
+        }
+        return answer;
+    }
     public int[] solution01172(int[] num_list)
     {
         int[] answer = new int[2] {0, 0};
