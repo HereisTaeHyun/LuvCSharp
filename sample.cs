@@ -1,8 +1,58 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
 
 class Sample
 
 {
+
+    public void StringBuilder()
+    {
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i < 26; i++)
+        {
+            sb.Append((char)('A' + i));
+            sb.Append(System.Environment.NewLine);
+        }
+        string s = sb.ToString();
+        Console.WriteLine(s);
+    }
+    public void StringSample()
+    {
+        string s1 = "C#";
+        string s2 = "Programming";
+        char cha1 = 'a';
+        char cha2 = 'b';
+
+        string s3 = s1 + s2;
+        Console.WriteLine($"String0 : {s3}");
+
+        string subString = s3.Substring(1, 5);
+        Console.WriteLine($"subString : {subString}");
+
+        string s = "C# studies";
+        for(int i = 0; i < s.Length; i++)
+        {
+            Console.WriteLine($"{i} : {s[i]}");
+            Console.WriteLine("{0} : {1}", i, s[i]);
+            Console.WriteLine("-----------------");
+        }
+
+        string str = "Hello";
+        char[] charArray = str.ToArray();
+
+        for(int i = 0; i < charArray.Length; i++)
+        {
+            Console.WriteLine(charArray[i]);
+        }
+        s = new string(charArray);
+        Console.WriteLine(s);
+
+        char c1 = 'A';
+        char c2 = (char)(c1 + 3);
+        Console.WriteLine(c2);
+    }
     public void Dictionary()
     {
         List<char> cList = new List<char>();

@@ -3,6 +3,13 @@ using System.Formats.Asn1;
 class Solution 
 
 {
+    public int[] solution0121(int[] numbers) {
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = numbers[i] * 2; 
+        }
+        return numbers;
+    }
     public int solution0120(int slice, int n) {
         int answer = n / slice;
         if(n % slice != 0)

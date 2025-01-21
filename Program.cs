@@ -7,10 +7,10 @@
 
         // Utils.PringIntArray(sliced);
 
-        // Sample sam = new Sample();
-        // sam.Dictionary();
+        Sample sam = new Sample();
+        sam.StringBuilder();
 
-        CSVAR obj = new CSVAR();
-        obj.method1();
+        // CSVAR obj = new CSVAR();
+        // obj.method1();
     }
 }
