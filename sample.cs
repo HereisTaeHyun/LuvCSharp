@@ -5,7 +5,26 @@ using System.Text;
 class Sample
 
 {
+    // Enum, Flags 잘 쓰면 좋음 가독성이 좋아진다
+    [Flags]
+    enum Border
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 8,
+    }
+    public void EnumSample()
+    {
+        Border border;
+        border = Border.Top | Border.Bottom | Border.Left;
 
+        if (border.HasFlag(Border.Bottom))
+        {
+            Console.WriteLine(border.ToString());
+        }
+    }
     public void StringBuilder()
     {
         StringBuilder sb = new StringBuilder();

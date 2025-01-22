@@ -2,13 +2,13 @@
 {
     private static void Main(string[] args)
     {
-        // Solution sol = new Solution();
-        // int[] sliced = sol.solution01162([1, 2, 3, 4, 5], 1, 3);
+        Solution sol = new Solution();
+        string[] s1 = new string[] {"a", "b", "c"};
+        string[] s2 = new string[] {"com", "b", "d", "p", "c"};
+        Console.WriteLine(sol.solution0122(s1, s2));
 
-        // Utils.PringIntArray(sliced);
-
-        Sample sam = new Sample();
-        sam.StringBuilder();
+        // Sample sam = new Sample();
+        // sam.EnumSample();
 
         // CSVAR obj = new CSVAR();
         // obj.method1();

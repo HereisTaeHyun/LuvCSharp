@@ -3,6 +3,21 @@ using System.Formats.Asn1;
 class Solution 
 
 {
+    public int solution0122(string[] s1, string[] s2) {
+        int answer = 0;
+        foreach(string elem1 in s1)
+        {
+            foreach(string elem2 in s2)
+            {
+                if(elem1 == elem2)
+                {
+                    answer += 1;
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
     public int[] solution0121(int[] numbers) {
         for (int i = 0; i < numbers.Length; i++)
         {
