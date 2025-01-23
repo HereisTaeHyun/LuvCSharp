@@ -3,6 +3,18 @@ using System.Formats.Asn1;
 class Solution 
 
 {
+    public int[] solution0123(int money)
+    {
+        // int[] answer = new int[2];
+        // const int n = 5500;
+        // answer[0] = money / n;
+        // answer[1] = money % n;
+
+        // return answer;
+
+        const int COFFEE_PRICE = 5500;
+        return new int[]{money/COFFEE_PRICE, money%COFFEE_PRICE};
+    }
     public int solution0122(string[] s1, string[] s2) {
         int answer = 0;
         foreach(string elem1 in s1)
