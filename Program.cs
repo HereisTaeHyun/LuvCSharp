@@ -3,12 +3,14 @@
     private static void Main(string[] args)
     {
         Solution sol = new Solution();
-        string[] s1 = new string[] {"a", "b", "c"};
-        string[] s2 = new string[] {"com", "b", "d", "p", "c"};
-        Console.WriteLine(sol.solution0122(s1, s2));
 
-        // Sample sam = new Sample();
-        // sam.EnumSample();
+        string s1 = "Progra21Sremm3";
+        string s2 = "Stanley1yelnatS";
+        Console.WriteLine(sol.solution01242(s1, 6, 12));
+        Console.WriteLine(sol.solution01242(s2, 4, 10));
+
+        // Sample sample = new Sample();
+        // sample.SwitchStatement(["/c"]);
 
         // CSVAR obj = new CSVAR();
         // obj.method1();

@@ -1,8 +1,39 @@
 using System.Formats.Asn1;
+using System.Text;
+using System.Linq;
 
 class Solution 
 
 {
+    public string solution01242(string my_string, int s, int e) {
+        string answer = "";
+        char[] chars = my_string.ToArray();
+        Array.Reverse(chars, s, e - s + 1);
+        answer = new string(chars);
+        return answer;
+    }
+    public string solution0124(string my_string) {
+        StringBuilder sb = new StringBuilder();
+        foreach(char elem in my_string)
+        {
+            sb.Insert(0, elem);
+        }
+        return sb.ToString();
+
+        // string answer = "";
+        // foreach(char elem in my_string)
+        // {
+        //     answer = elem + answer;
+        // }
+        // return answer;
+
+        // string answer = "";
+        // for(int i = my_string.Length - 1; i >= 0; i--)
+        // {
+        //     answer += my_string[i];
+        // }
+        // return answer;
+    }
     public int[] solution0123(int money)
     {
         // int[] answer = new int[2];

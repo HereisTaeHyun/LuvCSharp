@@ -5,6 +5,53 @@ using System.Text;
 class Sample
 
 {
+    static bool verbose = false;
+    static bool continueOnError = false;
+    static bool logging = false;
+    public void SwitchStatement(string[] args)
+    {
+        // int price = 0;
+        // switch(category)
+        // {
+        //     case "망고":
+        //         price = 1000;
+        //         break;
+        //     case "망고스틴":
+        //         price = 500;
+        //         break;
+        //     case "용과":
+        //         price = 1500;
+        //         break;
+        //     default:
+        //         price = 0;
+        //         break;
+        // }
+
+        // Console.WriteLine($"Price of {category} : {price}");
+
+        if(args.Length != 1)
+        {
+            Console.WriteLine("Usage : MyApp.exe option");
+            return;
+        }
+        string option = args[0];
+        switch(option.ToLower())
+        {
+            case "/v":
+            case "/verbose":
+                verbose = true;
+                break;
+            case "/c":
+                continueOnError = true;
+                break;
+            case "/l":
+                logging = true;
+                break;
+            default:
+                Console.WriteLine($"Unknown arhument : {option}");
+                break;
+        }
+    }
     // Enum, Flags 잘 쓰면 좋음 가독성이 좋아진다
     [Flags]
     enum Border
