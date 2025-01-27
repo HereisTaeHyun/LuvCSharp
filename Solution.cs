@@ -5,6 +5,28 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution01272(string my_string) {
+        string answer = "";
+        foreach(char elem in my_string)
+        {
+            if(elem != 'a' && elem != 'e' && elem != 'i' && elem != 'o' && elem != 'u' )
+            {
+                answer += elem;
+            }
+        }
+        return answer;
+    }
+    public int[] solution0127(string[] strlist) {
+        int[] answer = new int[strlist.Length];
+        int pointer = 0;
+        foreach (string word in strlist)
+        {
+            answer[pointer] = word.Length;
+            pointer++;
+        }
+        return answer;
+    }
+    
     public string solution01242(string my_string, int s, int e) {
         string answer = "";
         char[] chars = my_string.ToArray();

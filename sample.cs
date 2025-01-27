@@ -5,6 +5,20 @@ using System.Text;
 class Sample
 
 {
+    public void MAX_LOOP()
+    {
+        for(int i = 0; i > 0; i--)
+        {
+            Console.WriteLine($"I LOOP {i}");
+        }
+
+        int j = 1;
+        do 
+        {
+            Console.WriteLine(j);
+            j++;
+        } while(j < 10);
+    }
     static bool verbose = false;
     static bool continueOnError = false;
     static bool logging = false;
