@@ -5,6 +5,12 @@ using System.Text;
 class Sample
 
 {
+    public IEnumerable<int> GetNumber()
+    {
+        yield return 10;
+        yield return 20;
+        yield return 30;
+    }
     public void MAX_LOOP()
     {
         for(int i = 0; i > 0; i--)
