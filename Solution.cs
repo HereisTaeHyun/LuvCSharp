@@ -5,6 +5,32 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution01312(int n)
+    {
+        int answer;
+        if(n % 7 != 0)
+        {
+            answer = n / 7 + 1;
+        }
+        else
+        {
+            answer = n / 7;
+        }
+        return answer;
+    }
+    public int[] solution0131(int[] numArray)
+    {
+
+        // int[] answer = new int[numArray.Length];
+        // for(int i = 0; i < numArray.Length; i++)
+        // {
+        //     answer[i] = numArray[numArray.Length - 1 - i];
+        // }
+        // return answer;
+
+        Array.Reverse(numArray);
+        return numArray;
+    }
     public string solution01272(string my_string) {
         string answer = "";
         foreach(char elem in my_string)
