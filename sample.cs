@@ -5,6 +5,30 @@ using System.Text;
 class Sample
 
 {
+    public void TryCatch()
+    {
+        int[] intArray = new int[] {1, 2, 3};
+        try
+        {
+            // 실행할 코드
+            DoSomething(intArray);
+        }
+        catch(Exception exception)
+        {
+            // 에러 처리
+            Console.WriteLine($"에러 발생 {exception}");
+            throw;
+        }
+        finally
+        {
+            Console.WriteLine("종료");
+        }
+    }
+
+    private void DoSomething(int[] ia)
+    {
+        ia[5] = 0;
+    }
     public IEnumerable<int> GetNumber()
     {
         yield return 10;

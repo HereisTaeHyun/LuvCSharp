@@ -5,6 +5,18 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0203(int[] num_list) {
+        int answer = 0;
+        foreach(int elem in num_list)
+        {
+            if (elem < 0)
+            {
+                return answer;
+            }
+            answer += 1;
+        }
+        return -1;
+    }
     public int solution01312(int n)
     {
         int answer;

@@ -9,15 +9,12 @@
         // Console.WriteLine(sol.solution01242(s1, 6, 12));
         // Console.WriteLine(sol.solution01242(s2, 4, 10));
 
-        // Sample sample = new Sample();
-        // foreach(int elem in sample.GetNumber())
-        // {
-        //     Console.WriteLine(elem);
-        // }
+        Sample sample = new Sample();
+        sample.TryCatch();
 
         // CSVAR obj = new CSVAR();
         // obj.method1();
 
-        Utils.MakeLotto();
+        // Utils.MakeLotto();
     }
 }
