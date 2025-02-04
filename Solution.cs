@@ -5,6 +5,76 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution02042(int[] numLog)
+    {
+        string answer = "";
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 1; i < numLog.Length; i++)
+        {
+            int diff =  numLog[i-1] - numLog[i];
+            if(diff == -1)
+            {
+                stringBuilder.Append('w');
+            }
+            else if(diff == 1)
+            {
+                stringBuilder.Append('s');
+            }
+            else if(diff == -10)
+            {
+                stringBuilder.Append('d');
+            }
+            else if(diff == 10)
+            {
+                stringBuilder.Append('a');
+            }
+        }
+        answer = stringBuilder.ToString();
+        return answer;
+    }
+    public int solution0204(int n, string control)
+    {
+        foreach(char elem in control)
+        {
+            if(elem.Equals('w'))
+            {
+                n += 1;
+            }
+            else if(elem.Equals('s'))
+            {
+                n -= 1;
+            }
+            else if(elem.Equals('d'))
+            {
+                n += 10;
+            }
+            else if(elem.Equals('a'))
+            {
+                n -= 10;
+            }
+        }
+        return n;
+
+        // foreach(char elem in control)
+        // {
+        //     switch(elem)
+        //     {
+        //         case 'w':
+        //             n += 1;
+        //             break;
+        //         case 's':
+        //             n -= 1;
+        //             break;
+        //         case 'd':
+        //             n += 10;
+        //             break;
+        //         case 'a':
+        //             n -= 10;
+        //             break;
+        //     }
+        //     return n;
+        // }
+    }
     public int solution0203(int[] num_list) {
         int answer = 0;
         foreach(int elem in num_list)
