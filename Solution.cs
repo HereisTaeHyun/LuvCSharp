@@ -5,6 +5,15 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0205(int a, int b) {
+        int answer = 0;
+        int merge = Int32.Parse(a.ToString() + b.ToString());
+        int compare = 2 * a * b;
+        
+        answer = merge >= compare ? merge : compare;
+        
+        return answer;
+    }
     public string solution02042(int[] numLog)
     {
         string answer = "";

@@ -5,6 +5,22 @@ using System.Text;
 class Sample
 
 {
+
+    struct MyPoint
+    {
+        public int x;
+        public int y;
+        public MyPoint(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public override string ToString()
+        {
+            return $"{x}, {y}";
+        }
+    }
     public void TryCatch()
     {
         int[] intArray = new int[] {1, 2, 3};
