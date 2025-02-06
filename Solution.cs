@@ -5,6 +5,15 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0206(int start_num, int end_num) {
+        int[] answer = new int[end_num - start_num + 1];
+        for(int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = start_num;
+            start_num += 1;
+        }
+        return answer;
+    }
     public int solution0205(int a, int b) {
         int answer = 0;
         int merge = Int32.Parse(a.ToString() + b.ToString());
