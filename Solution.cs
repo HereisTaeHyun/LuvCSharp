@@ -5,6 +5,23 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0207(int[] num_list) {
+        int odd = 0;
+        int even = 0;
+        for(int i = 0; i < num_list.Length; i++)
+        {
+            if(i % 2 == 0)
+            {
+                even += num_list[i];
+            }
+            else if(i % 2 == 1)
+            {
+                odd += num_list[i];
+            }
+        }
+        return even > odd ? even:odd;
+    }
+
     public int[] solution0206(int start_num, int end_num) {
         int[] answer = new int[end_num - start_num + 1];
         for(int i = 0; i < answer.Length; i++)
