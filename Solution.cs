@@ -5,6 +5,28 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0211(int n) {
+        List<int> intLst = new List<int>();
+        for(int i = 1; i <= n; i++)
+        {
+            if(i % 2 != 0)
+            {
+                intLst.Add(i);
+            }
+        }
+        return intLst.ToArray();
+    }
+    public string solution0211(string n_str) {
+        for(int i = 0; i < n_str.Length - 1; i++)
+        {
+            if(n_str[0] == '0')
+            {
+                n_str = n_str.Remove(i, 1);
+                i--;
+            }
+        }
+        return n_str;
+    }
     public int solution0207(int[] num_list) {
         int odd = 0;
         int even = 0;
