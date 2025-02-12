@@ -6,6 +6,28 @@ class Sample
 
 {
 
+    public void CheckInput(int? i, float? f, DateTime? time, bool? selected)
+    {
+        DateTime date;
+        float sum = 0;
+        bool? tf;
+        if(i.HasValue && f.HasValue)
+        {
+            sum = (float)i.Value + (float)f.Value;
+        }
+
+        if(time.HasValue)
+        {
+            throw new ArgumentException();
+        }
+        else
+        {
+            date = time.Value;
+        }
+
+        tf = selected ?? false; // ?? 앞의 파라미터가 NULL이면 뒤를 할당
+        
+    }
     struct MyPoint
     {
         public int x;

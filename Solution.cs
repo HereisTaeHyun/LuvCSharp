@@ -5,6 +5,16 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0212(int[] num_list) {
+        List<int> answer = new List<int>();;
+        Array.Sort(num_list);
+        
+        for(int i = 5; i < num_list.Length; i++)
+        {
+            answer.Add(num_list[i]);
+        }
+        return answer.ToArray();
+    }
     public int[] solution0211(int n) {
         List<int> intLst = new List<int>();
         for(int i = 1; i <= n; i++)
