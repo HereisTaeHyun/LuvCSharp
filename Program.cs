@@ -14,8 +14,25 @@
 
         // Utils.MakeLotto();
 
-        MyCustomer customer1 = new MyCustomer("Biktor", 27);
-        customer1.YearMoney = 500;
-        Console.WriteLine($"{customer1.GetCustomerDate()}");
+        // MyCustomer customer1 = new MyCustomer("Biktor", 27);
+        // customer1.YearMoney = 500;
+        // Console.WriteLine($"{customer1.GetCustomerDate()}");
+
+        MyButton myButton = new MyButton();
+        myButton.Click += new EventHandler(MyButtonClick); // 이벤트 가입은 +=, -=으로 가입 및 탈퇴
+        myButton.Click += new EventHandler(MyButtonDown);
+         myButton.Click -= new EventHandler(MyButtonDown);
+        myButton.Text = "Run";
+        myButton.MouseButtonDown();
+    }
+
+    static void MyButtonClick(object sender, EventArgs e)
+    {
+        Console.WriteLine("버튼 입력");
+    }
+
+        static void MyButtonDown(object sender, EventArgs e)
+    {
+        Console.WriteLine("버튼 누름");
     }
 }

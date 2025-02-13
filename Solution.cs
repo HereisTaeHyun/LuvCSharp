@@ -5,6 +5,17 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0213(int[] arr) {
+        List<int> answer = new List<int>();
+        foreach(var elem in arr)
+        {
+            for(int i = 0; i < elem; i++)
+            {
+                answer.Add(elem);
+            }
+        }
+        return answer.ToArray();
+    }
     public int[] solution0212(int[] num_list) {
         List<int> answer = new List<int>();;
         Array.Sort(num_list);
