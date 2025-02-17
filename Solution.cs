@@ -5,6 +5,24 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0217(int n) {
+        List<int> answer = new List<int>();
+        answer.Add(n);
+        while(n != 1)
+        {
+            if(n % 2 == 0)
+            {
+                n /= 2;
+                answer.Add(n);
+            }
+            else if (n % 2 == 1)
+            {
+                n = 3 * n + 1;
+                answer.Add(n);
+            }
+        }
+        return answer.ToArray();
+    }
     public int[] solution0213(int[] arr) {
         List<int> answer = new List<int>();
         foreach(var elem in arr)
