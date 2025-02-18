@@ -5,6 +5,17 @@ using System.Linq;
 class Solution 
 
 {
+    public string[] solution0218(string[] names) {
+        List<string> answer = new List<string>();
+        for(int i = 0; i < names.Length; i++)
+        {
+            if(i % 5 == 0)
+            {
+                answer.Add(names[i]);
+            }
+        }
+        return answer.ToArray();
+    }
     public int[] solution0217(int n) {
         List<int> answer = new List<int>();
         answer.Add(n);
