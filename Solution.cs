@@ -5,6 +5,12 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0219(int[] numbers) {
+        int maxNum = 0;
+        Array.Sort(numbers);
+        maxNum = numbers[numbers.Length - 1] * numbers[numbers.Length - 2];
+        return maxNum;
+    }
     public string[] solution0218(string[] names) {
         List<string> answer = new List<string>();
         for(int i = 0; i < names.Length; i++)
