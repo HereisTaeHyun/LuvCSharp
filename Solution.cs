@@ -5,6 +5,39 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution02202(int[] sides) {
+        int answer = 0;
+        int longSide = Math.Max(sides[0], sides[1]);
+        int smallSide = Math.Min(sides[0], sides[1]);
+        
+        for(int i = longSide - smallSide + 1; i <= longSide; i++)
+        {
+            answer++;
+        }
+        for(int i = longSide + 1; i < longSide + smallSide; i++)
+        {
+            answer++;
+        }
+        return answer;
+    }
+    public int solution0220(int[] sides) {
+        Array.Sort(sides);
+        int answer = 0;
+
+        // 삼항 연산자 사용
+        answer = sides[2] < sides[1] + sides[0] ? 1 : 2;
+
+        // if문 사용
+        // if (sides[2] < sides[1] + sides[0])
+        // {
+        //     answer = 1;
+        // }
+        // else
+        // {
+        //     answer = 2;
+        // }
+        return answer;
+    }
     public int solution0219(int[] numbers) {
         int maxNum = 0;
         Array.Sort(numbers);
