@@ -5,6 +5,14 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0221(string number) {
+        int sum = 0;  
+        foreach(char elem in number)
+        {
+            sum += elem - '0';
+        }
+        return sum % 9;
+    }
     public int solution02202(int[] sides) {
         int answer = 0;
         int longSide = Math.Max(sides[0], sides[1]);
