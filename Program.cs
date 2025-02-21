@@ -25,11 +25,10 @@
         // myButton.Text = "Run";
         // myButton.MouseButtonDown();
 
-        MyIndexer myIndexer = new MyIndexer();
-        myIndexer[0] = 1;
-        Console.WriteLine(myIndexer[0]);
-        // myIndexer[11] = 11;
-        // Console.WriteLine(myIndexer[11]);
+        string[] s1 = new string[]{"Hi", "By", "Yes"};
+        int[] i1 = new int[]{4, 2, 9};
+        Utils.PrintArray<string>(s1);
+        Utils.PrintArray<int>(i1);
 
     }
 

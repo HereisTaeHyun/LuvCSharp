@@ -1,6 +1,20 @@
 static class Utils
 {
     // 도구 모음집
+    public static void PrintArray<T>(T[] values)
+    {
+        Console.Write("[");
+        for(int i = 0; i < values.Length; i++)
+        {
+            if (i != 0)
+            {
+                Console.Write(", ");
+            }
+            Console.Write(values[i]);
+            
+        }
+        Console.Write("]");
+    }
     public static void PringIntArray(int[] intArray)
     {
         Console.Write("[");
