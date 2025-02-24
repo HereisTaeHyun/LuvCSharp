@@ -5,6 +5,22 @@ using System.Text;
 class Sample
 
 {
+    public delegate int MyInt(string s);
+    
+    public void DelegateLoad()
+    {
+        MyInt myInt = new MyInt(StringToInt);
+        Delegaterunner(myInt);
+    }
+    public void Delegaterunner(MyInt method)
+    {
+        int i = method("123");
+    }
+
+    public int StringToInt(string s)
+    {
+        return int.Parse(s);
+    }
 
     public void CheckInput(int? i, float? f, DateTime? time, bool? selected)
     {

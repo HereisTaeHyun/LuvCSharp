@@ -5,6 +5,17 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0224(int n) {
+        List<int> answer = new List<int>();
+        for (int i = 1; i <= n; i++)
+        {
+            if(n % i == 0)
+            {
+                answer.Add(i);
+            }
+        }
+        return answer.ToArray();
+    }
     public int solution0221(string number) {
         int sum = 0;  
         foreach(char elem in number)
