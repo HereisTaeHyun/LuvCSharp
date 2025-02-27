@@ -5,6 +5,18 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0227(int order) {
+        int answer = 0;
+        string strOrder = order.ToString();
+        foreach(char elem in strOrder)
+        {
+            if(elem.Equals('3') || elem.Equals('6') || elem.Equals('9'))
+            {
+                answer += 1;
+            }
+        }
+        return answer;
+    }
     public int solution0226(string binomial) {
         int answer = 0;
         
