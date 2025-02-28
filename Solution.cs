@@ -5,6 +5,51 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution02283(int[] array) {
+        int[] answer = new int[2];
+        int biggist = 0;
+        
+        for(int i = 1; i < array.Length; i++)
+        {
+            if(Math.Max(array[i], array[i - 1]) > biggist)
+            {
+                biggist = Math.Max(array[i], array[i - 1]);
+                answer[0] = biggist;
+                answer[1] = i;
+            }
+        }
+        return answer;
+    }
+    public int[] solution02282(int[] array) {
+        int[] answer = new int[2];
+        Dictionary<int, int> dicArr = new Dictionary<int, int>();
+        for(int i = 0; i < array.Length; i++)
+        {
+            dicArr.Add(array[i], i);
+        }
+        
+        List<int> listArr = array.ToList();
+        listArr.Sort();
+        listArr.Reverse();
+        answer[0] = listArr[0];
+        
+        int maxIdx = dicArr[listArr[0]];
+        answer[1] = maxIdx;
+        
+        return answer;
+    }
+    public int solution0228(int[] arr, int idx) {
+        int answer = -1;
+        for(int i = idx; i < arr.Length; i++)
+        {
+            if(arr[i] == 1)
+            {
+                answer = i;
+                break;
+            }
+        }
+        return answer;
+    }
     public int solution0227(int order) {
         int answer = 0;
         string strOrder = order.ToString();
