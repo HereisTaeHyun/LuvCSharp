@@ -1,12 +1,46 @@
 using System.Collections;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 class Sample
 
 {
+    public void lambdaTest3()
+    {
+        Func<int> f1 = () => 1;
+        Func<int, int> f2 = (a) => a * 2;
+        Func<float, int> f3 = (f) => (int)f + 3;
+        Func<float, string> f4 = (f) => f + "3";
+
+        Console.WriteLine($"f1 type: {f1().GetType()}, value: {f1()}");
+        Console.WriteLine($"f2 type: {f2(2).GetType()}, value: {f2(2)}");
+        Console.WriteLine($"f3 type: {f3(2).GetType()}, value: {f3(2)}");
+        Console.WriteLine($"f4 type: {f4(2).GetType()}, value: {f4(2)}");
+
+        Action a1 = () => Console.WriteLine("From here, Action line start");
+        Action<int, int> a2 = (a, b) => Console.WriteLine($"a + b = {a + b}");
+        a1();
+        a2(5, 6);
+    }
+    public delegate int MyDel(int a, int b);
+    public void lambdaTest2()
+    {
+        MyDel myDelAdder = (a, b) => a + b;
+        int sum = myDelAdder(5, 6);
+    }
+    public event EventHandler eventHandler;
+    public void lambdaTest()
+    {
+        eventHandler += (sender, e) => Console.WriteLine("Event triggered!");
+
+        Func<int, int, int> Adder = (int a, int b) => a + b;
+        int added = Adder(2, 5);
+        Console.WriteLine(added);
+    }
+
     public delegate int MyInt(string s);
-    
     public void DelegateLoad()
     {
         MyInt myInt = new MyInt(StringToInt);

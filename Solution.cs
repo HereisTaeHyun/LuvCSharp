@@ -5,6 +5,15 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution0304(int age) {
+        string answer = "";
+        string strAge = age.ToString();
+        foreach(char elem in strAge)
+        {
+            answer += (char)(elem + 49);
+        }
+        return answer;
+    }
     public int[] solution02283(int[] array) {
         int[] answer = new int[2];
         int biggist = 0;

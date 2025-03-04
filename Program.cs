@@ -6,8 +6,8 @@
         // int result = sol.solution0204(0, "wsdawsdassw");
         // Console.WriteLine($"결과물 : {result}");
 
-        // Sample sample = new Sample();
-        // sample.TryCatch();
+        Sample sample = new Sample();
+        sample.lambdaTest3();
 
         // CSVAR obj = new CSVAR();
         // obj.method1();
@@ -25,10 +25,10 @@
         // myButton.Text = "Run";
         // myButton.MouseButtonDown();
 
-        string[] s1 = new string[]{"Hi", "By", "Yes"};
-        int[] i1 = new int[]{4, 2, 9};
-        Utils.PrintArray<string>(s1);
-        Utils.PrintArray<int>(i1);
+        // string[] s1 = new string[]{"Hi", "By", "Yes"};
+        // int[] i1 = new int[]{4, 2, 9};
+        // Utils.PrintArray<string>(s1);
+        // Utils.PrintArray<int>(i1);
 
     }
 
