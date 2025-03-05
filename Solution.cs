@@ -5,6 +5,28 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution0305(string my_string, int num1, int num2) {
+        string answer = "";
+        char store1 = my_string[num1];
+        char store2 = my_string[num2];
+        
+        for(int i = 0; i < my_string.Length; i++)
+        {
+            if(i == num1)
+            {
+                answer += store2;
+            }
+            else if(i == num2)
+            {
+                answer += store1;
+            }
+            else
+            {
+                answer += my_string[i];
+            }
+        }
+        return answer;
+    }
     public string solution0304(int age) {
         string answer = "";
         string strAge = age.ToString();
