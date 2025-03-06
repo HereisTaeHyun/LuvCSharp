@@ -5,6 +5,19 @@ using System.Linq;
 class Solution 
 
 {
+    public string[] solution0306(string[] todo_list, bool[] finished) {
+        List<string> answer = new List<string>();
+        
+        for(int i = 0; i < todo_list.Length; i++)
+        {
+            if(finished[i] == false)
+            {
+                answer.Add(todo_list[i]);
+            }
+        }
+        
+        return answer.ToArray();
+    }
     public string solution0305(string my_string, int num1, int num2) {
         string answer = "";
         char store1 = my_string[num1];
