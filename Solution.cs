@@ -5,6 +5,23 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution03072(double flo) {
+        return (int)flo;
+    }
+    public int solution0307(int[,] board, int k) {
+        int answer = 0;
+        for(int i = 0; i < board.GetLength(0); i++)
+        {
+            for(int j = 0; j < board.GetLength(1); j++)
+            {
+                if((i + j) <= k)
+                {
+                    answer += board[i, j];
+                }
+            }
+        }
+        return answer;
+    }
     public string[] solution0306(string[] todo_list, bool[] finished) {
         List<string> answer = new List<string>();
         
