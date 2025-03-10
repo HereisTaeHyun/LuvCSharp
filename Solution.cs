@@ -5,6 +5,24 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution(int n) {
+        int[] answer = new int[2];
+        answer[0] = gcd(n, 6);
+        answer[1] = (n * 6) / answer[0];
+        return answer[1] / 6;
+    }
+    
+    public int gcd(int x, int y)
+    {
+        if(y == 0)
+        {
+            return x;
+        }
+        else
+        {
+            return gcd(y, x % y);
+        }
+    }
     public int solution03072(double flo) {
         return (int)flo;
     }
