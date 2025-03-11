@@ -5,6 +5,17 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution0311(string my_string) {
+        string answer = "";
+        foreach(char elem in my_string)
+        {
+            if(!answer.Contains(elem))
+            {
+                answer += elem;
+            }
+        }
+        return answer;
+    }
     public int solution(int n) {
         int[] answer = new int[2];
         answer[0] = gcd(n, 6);
