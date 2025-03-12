@@ -5,6 +5,19 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0312(int[] emergency) {
+        int[] answer = new int[emergency.Length];
+        List<int> lstEmergency = new List<int>(emergency);
+        
+        lstEmergency.Sort();
+        lstEmergency.Reverse();
+        
+        for(int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = lstEmergency.IndexOf(emergency[i]) + 1;
+        }
+        return answer;
+    }
     public string solution0311(string my_string) {
         string answer = "";
         foreach(char elem in my_string)
