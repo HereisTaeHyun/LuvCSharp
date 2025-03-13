@@ -5,6 +5,17 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0313(string my_string) {
+        int answer = 0;
+        foreach(char elem in my_string)
+        {
+            if((elem - '0') <= 9)
+            {
+                answer += elem - '0';
+            }
+        }
+        return answer;
+    }
     public int[] solution0312(int[] emergency) {
         int[] answer = new int[emergency.Length];
         List<int> lstEmergency = new List<int>(emergency);
