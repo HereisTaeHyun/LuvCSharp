@@ -5,6 +5,36 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution0314(string s) {
+        string answer = "";
+        List<char> lstStr = new List<char>();
+        Dictionary<char, int> dicStr = new Dictionary<char, int>();
+        foreach(char elem in s)
+        {
+            if(!dicStr.ContainsKey(elem))
+            {
+                dicStr.Add(elem, 1);
+            }
+            else if(dicStr.ContainsKey(elem))
+            {
+                dicStr[elem] += 1;
+            }
+        }
+        
+        foreach(KeyValuePair<char, int> elem in dicStr)
+        {
+            if(elem.Value == 1)
+            {
+                lstStr.Add(elem.Key);
+            }
+        }
+        lstStr.Sort();
+        foreach(char elem in lstStr)
+        {
+            answer += elem;
+        }
+        return answer;
+    }
     public int solution0313(string my_string) {
         int answer = 0;
         foreach(char elem in my_string)
