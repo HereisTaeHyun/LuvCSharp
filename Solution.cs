@@ -5,6 +5,25 @@ using System.Linq;
 class Solution 
 
 {
+    public string[] solution0317(string my_str, int n) {
+        List<string> answer = new List<string>();
+        string store = "";
+        int counter = 0;
+        int totalCounter = 0;
+        foreach(char elem in my_str)
+        {
+            store += elem;
+            counter += 1;
+            totalCounter += 1;
+            if(counter == n || totalCounter == my_str.Length)
+            {
+                answer.Add(store);
+                store = "";
+                counter = 0;
+            }
+        }
+        return answer.ToArray();
+    }
     public string solution0314(string s) {
         string answer = "";
         List<char> lstStr = new List<char>();
