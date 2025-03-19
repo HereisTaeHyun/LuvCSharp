@@ -5,6 +5,21 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0319(string[] order) {
+        int answer = 0;
+        foreach(string elem in order)
+        {
+            if(elem.Contains("americano") || elem.Contains("anything"))
+            {
+                answer += 4500;
+            }
+            else if(elem.Contains("cafelatte"))
+            {
+                answer += 5000;
+            }
+        }
+        return answer;
+    }
     public string[] solution0317(string my_str, int n) {
         List<string> answer = new List<string>();
         string store = "";
