@@ -5,6 +5,45 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution0321(string a, string b) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int longerLen = a.Length >= b.Length ? a.Length : b.Length;
+
+        int store = 0;
+        for(int i = 0; i < longerLen; i++)
+        {
+
+            int va = 0;
+            if(a.Length > i)
+            {
+                va = a[a.Length - 1 - i] - '0';
+            }
+            int vb = 0;
+            if(b.Length > i)
+            {
+                vb = b[b.Length - 1 - i] - '0';
+            }
+
+            int sum = va + vb + store;
+
+            if(sum >= 10)
+            {
+                store = 1;
+                sum -= 10;
+            }
+            else
+            {
+                store = 0;
+            }
+            stringBuilder.Insert(0, sum);
+        }
+
+        if(store > 0)
+        {
+            stringBuilder.Insert(0, 1);
+        }
+        return stringBuilder.ToString();
+    }
     public int solution0319(string[] order) {
         int answer = 0;
         foreach(string elem in order)
