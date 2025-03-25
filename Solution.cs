@@ -5,6 +5,27 @@ using System.Linq;
 class Solution 
 
 {
+    public string solution0325(string[] id_pw, string[,] db) {
+        string answer = "fail";
+        for(int i = 0; i < db.GetLength(0); i++)
+        {
+            for(int j = 0; j < db.GetLength(1); j++)
+            {
+                if(id_pw[0] == db[i, 0])
+                {
+                    if(id_pw[1] == db[i, 1])
+                    {
+                        answer = "login";
+                    }
+                    else if(id_pw[1] != db[i, 1])
+                    {
+                        answer = "wrong pw";
+                    }
+                }
+            }
+        }
+        return answer;
+    }
     public string solution0321(string a, string b) {
         StringBuilder stringBuilder = new StringBuilder();
         int longerLen = a.Length >= b.Length ? a.Length : b.Length;
