@@ -5,6 +5,44 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0401(int l, int r) {
+        List<int> answer = new List<int>();
+        for(int i = l; i <= r; i++)
+        {
+            if((i % 5) != 0)
+            {
+                continue;
+            }
+            string str = i.ToString();
+            if(str.Replace("0", "").Replace("5", "").Length == 0)
+            {
+                answer.Add(i);
+            }
+        }
+        if(answer.Count == 0)
+        {
+            answer.Add(-1);
+        }
+        return answer.ToArray();
+        // List<int> answer = new List<int>();
+        // for(int i = l; i <= r; i++)
+        // {
+        //     if((i % 5) != 0)
+        //     {
+        //         continue;
+        //     }
+        //     string str = i.ToString();
+        //     if(str.Contains('0') || str.Contains('5'))
+        //     {
+        //         answer.Add(i);
+        //     }
+        // }
+        // if(answer.Count == 0)
+        // {
+        //     answer.Add(-1);
+        // }
+        // return answer.ToArray();
+    }
     public string solution0325(string[] id_pw, string[,] db) {
         string answer = "fail";
         for(int i = 0; i < db.GetLength(0); i++)
