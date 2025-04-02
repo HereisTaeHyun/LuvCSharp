@@ -5,6 +5,33 @@ using System.Linq;
 class Solution 
 
 {
+    public string[] solution0402(string[] quiz) {
+        string[] answer = new string[quiz.Length];
+        for(int i = 0; i < quiz.Length; i++)
+        {
+            string[] splitStr = quiz[i].Split(' ');
+            int x = int.Parse(splitStr[0]);
+            int y = int.Parse(splitStr[2]);
+            int check = 0;
+            if(splitStr[1] == "+")
+            {
+                check = x + y;
+            }
+            else if(splitStr[1] == "-")
+            {
+                check = x - y;
+            }
+            if(check == int.Parse(splitStr[4]))
+            {
+                answer[i] = "O";
+            }
+            else if(check != int.Parse(splitStr[4]))
+            {
+                answer[i] = "X";
+            }
+        }
+        return answer;
+    }
     public int[] solution0401(int l, int r) {
         List<int> answer = new List<int>();
         for(int i = l; i <= r; i++)
