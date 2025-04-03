@@ -1,4 +1,7 @@
-﻿internal class Program
+﻿#define Test
+using System.Diagnostics;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -6,8 +9,8 @@
         // int result = sol.solution0204(0, "wsdawsdassw");
         // Console.WriteLine($"결과물 : {result}");
 
-        Sample sample = new Sample();
-        sample.lambdaTest3();
+        // Sample sample = new Sample();
+        // sample.lambdaTest3();
 
         // CSVAR obj = new CSVAR();
         // obj.method1();
@@ -30,6 +33,10 @@
         // Utils.PrintArray<string>(s1);
         // Utils.PrintArray<int>(i1);
 
+        Program program = new Program();
+        program.TestConditional();
+        Console.WriteLine("End Line");
+
     }
 
     static void MyButtonClick(object sender, EventArgs e)
@@ -40,5 +47,11 @@
         static void MyButtonDown(object sender, EventArgs e)
     {
         Console.WriteLine("버튼 누름");
+    }
+
+    [Conditional("Test")]
+    public void TestConditional()
+    {
+        Console.WriteLine("TestConditional");
     }
 }
