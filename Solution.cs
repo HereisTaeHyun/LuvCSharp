@@ -5,6 +5,21 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution0403(int[] common) {
+        int answer = 0;
+        int first = common[1] - common[0];
+        int second = common[2] - common[1];
+        if(first == second)
+        {
+            return common[common.Length - 1] + first;
+        }
+        else if(first != second)
+        {
+            int ratio = common[1] / common[0];
+            return common[common.Length - 1] * ratio;
+        }
+        return answer;
+    }
     public string[] solution0402(string[] quiz) {
         string[] answer = new string[quiz.Length];
         for(int i = 0; i < quiz.Length; i++)
