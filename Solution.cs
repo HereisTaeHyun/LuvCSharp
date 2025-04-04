@@ -5,6 +5,16 @@ using System.Linq;
 class Solution 
 
 {
+    public int[] solution0404(int num, int total) {
+        int[] answer = new int[num];
+        int idx = total / num;
+        int startIdx = idx - (num - 1) / 2;
+        for(int i = 0; i < num; i++)
+        {
+            answer[i] = startIdx + i;
+        }
+        return answer;
+    }
     public int solution0403(int[] common) {
         int answer = 0;
         int first = common[1] - common[0];
