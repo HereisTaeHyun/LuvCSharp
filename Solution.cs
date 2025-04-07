@@ -5,6 +5,70 @@ using System.Linq;
 class Solution 
 
 {
+    public int solution(int[,] board) {
+        int answer = 0;
+        int[,] scanningBoard = new int[board.GetLength(0) + 2, board.GetLength(0) + 2];
+        // 위험 지대 표시
+        for(int i = 1; i <= board.GetLength(0); i++)
+        {
+            for(int j = 1; j <= board.GetLength(0); j++)
+            {
+                if(board[i - 1, j - 1] == 1)
+                {
+                    scanningBoard[i, j] = 1;
+                    scanningBoard[i + 1, j] = 1;
+                    scanningBoard[i - 1, j] = 1;
+                    scanningBoard[i, j + 1] = 1;
+                    scanningBoard[i, j - 1] = 1;
+                    scanningBoard[i + 1, j + 1] = 1;
+                    scanningBoard[i - 1, j + 1] = 1;
+                    scanningBoard[i - 1, j - 1] = 1;
+                    scanningBoard[i + 1, j - 1] = 1;
+                }
+            }
+        }
+        
+        // 표시되지 않은 곳을 카운트
+        for(int i = 1; i <= board.GetLength(0); i++)
+        {
+            for(int j = 1; j <= board.GetLength(0); j++)
+            {
+                if(scanningBoard[i, j] == 0)
+                {
+                    answer += 1;
+                }
+            }
+        }
+        return answer;
+    }
+        
+        // 표시되지 않은 곳을 카운트
+        for(int i = 1; i <= board.GetLength(0); i++)
+        {
+            for(int j = 1; j <= board.GetLength(0); j++)
+            {
+                if(scanningBoard[i, j] == 0)
+                {
+                    answer += 1;
+                }
+            }
+        }
+        return answer;
+        }
+        
+        // 표시되지 않은 곳을 카운트
+        for(int i = 0; i < board.GetLength(0); i++)
+        {
+            for(int j = 0; j < board.GetLength(0); j++)
+            {
+                if(board[i, j] == 0)
+                {
+                    answer += 1;
+                }
+            }
+        }
+        return answer;
+    }
     public int[] solution0404(int num, int total) {
         int[] answer = new int[num];
         int idx = total / num;
