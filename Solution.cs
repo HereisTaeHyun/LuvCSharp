@@ -5,7 +5,88 @@ using System.Linq;
 class Solution 
 
 {
-    public int solution(int[,] board) {
+    public int solution(int a, int b, int c, int d) {
+        int answer = 0;
+        int[] dice = new int[7];
+        dice = IntoDice(a, dice);
+        dice = IntoDice(b, dice);
+        dice = IntoDice(c, dice);
+        dice = IntoDice(d, dice);
+        if(dice.Contains(4))
+        {
+            for(int i = 0; i <= 6; i++)
+            {
+                if(dice[i] == 4)
+                {
+                    answer = i * 1111;
+                }
+            }
+        }
+        else if(dice.Contains(3))
+        {
+            for(int i = 0; i <= 6; i++)
+            {
+                if(dice[i] == 3)
+                {
+                    for(int j = 0; j <= 6; j++)
+                    {
+                        if(dice[j] == 1)
+                        {
+                            answer = (10 * i + j) * (10 * i + j);
+                        }
+                    }
+                }
+            }
+        }
+        else if(dice.Contains(2))
+        {
+            if(dice.Contains(1))
+            {
+                for(int i = 0; i <= 6; i++)
+                {
+                    if(dice[i] == 1)
+                    {
+                        for(int j = i + 1; j <= 6; j++)
+                        {
+                            if(dice[j] == 1)
+                            {
+                                answer = (i * j);
+                            }
+                        }
+                    }
+                }
+            }
+            else if(dice.Contains(2))
+            {
+                for(int i = 0; i <= 6; i++)
+                {
+                    if(dice[i] == 2)
+                    {
+                        for(int j = i + 1; j <= 6; j++)
+                        {
+                            if(dice[j] == 2)
+                            {
+                                answer = (i + j) * (j - i);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if(!dice.Contains(4) && !dice.Contains(3) && !dice.Contains(2))
+        {
+            int min = Math.Min(Math.Min(a, b), Math.Min(c, d));
+            answer = min;
+        }
+        return answer;
+    }
+    
+    public int[] IntoDice(int value, int[] dice)
+    {
+        dice[value]++;
+        return dice;
+    }
+    public int solution0407(int[,] board) {
         int answer = 0;
         int[,] scanningBoard = new int[board.GetLength(0) + 2, board.GetLength(0) + 2];
         // 위험 지대 표시
@@ -34,34 +115,6 @@ class Solution
             for(int j = 1; j <= board.GetLength(0); j++)
             {
                 if(scanningBoard[i, j] == 0)
-                {
-                    answer += 1;
-                }
-            }
-        }
-        return answer;
-    }
-        
-        // 표시되지 않은 곳을 카운트
-        for(int i = 1; i <= board.GetLength(0); i++)
-        {
-            for(int j = 1; j <= board.GetLength(0); j++)
-            {
-                if(scanningBoard[i, j] == 0)
-                {
-                    answer += 1;
-                }
-            }
-        }
-        return answer;
-        }
-        
-        // 표시되지 않은 곳을 카운트
-        for(int i = 0; i < board.GetLength(0); i++)
-        {
-            for(int j = 0; j < board.GetLength(0); j++)
-            {
-                if(board[i, j] == 0)
                 {
                     answer += 1;
                 }
