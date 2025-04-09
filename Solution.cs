@@ -5,7 +5,28 @@ using System.Linq;
 class Solution 
 
 {
-    public int solution(int a, int b, int c, int d) {
+    public int solution0409(int[,] lines) {
+        int answer = 0;
+        int[] store = new int[200];
+        for(int i = 0; i < lines.GetLength(0); i++)
+        {
+            int start = lines[i, 0] + 100;
+            int end = lines[i, 1] + 100;
+            for(int j = start; j < end; j++)
+            {
+                store[j] += 1;
+            }
+        }
+        foreach(int point in store)
+        {
+            if(point >= 2)
+            {
+                answer += 1;
+            }
+        }
+        return answer;
+    }
+    public int solution0408(int a, int b, int c, int d) {
         int answer = 0;
         int[] dice = new int[7];
         dice = IntoDice(a, dice);
