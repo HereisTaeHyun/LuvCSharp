@@ -7,6 +7,23 @@ using System.Text;
 class Sample
 
 {
+    public int solution0425(int[] d, int budget) {
+        int answer = 0;
+        int store = 0;
+        Array.Sort(d);
+        for (int i = 0; i < d.Length; i++)
+        {
+            if(budget < d[i] || budget <= 0)
+            {
+                break;
+            }
+            answer += 1;
+            store += d[i];
+            budget -= d[i];
+        }
+        return answer;
+    }
+
     public void lambdaTest3()
     {
         Func<int> f1 = () => 1;
@@ -330,7 +347,7 @@ class Sample
         DateTime dt = new DateTime(2025, 1, 13, 10, 24, 00);
     }
 
-    public void Array ()
+    public void ArrayPrac ()
     {
         string[] players = new string[10];
         Console.WriteLine("PlayersNum : " + players.Length);
